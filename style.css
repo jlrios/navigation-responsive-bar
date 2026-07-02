@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/*===========================
+  Vars
+===========================*/
+:root {
+  --header-height: 4rem;
+  --sidebar-width: 4.5rem;
+  --sidebar-width-open: 19rem;
+  --background-color: #fff;
+  --text-title-color: #E5613A;
+  --text-color: #32363B;
+  --icon-color: #32363B;
+  --icon-menu-color: #707780;
+  --menu-color: #707780;
+  --text-selected-color: #355CC0;
+  --background-selected: #EBF0FF;
+  --background-hover: #F7F9FA;
+  --border-color: #E6E9ED;
+}
+
+/*===========================
+  Global
+===========================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body.menu-toggle .sidebar {
+  width: var(--sidebar-width-open);
+}
+
+body.menu-toggle main {
+  margin-left: var(--sidebar-width-open);
+}
+
+body.menu-toggle .menu div:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+body.menu-toggle .menu div:nth-child(2) {
+  opacity: 0;
+}
+
+body.menu-toggle .menu div:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/*===========================
+  Header
+===========================*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .45rem 2rem .45rem 1.25rem;
+  background: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 200;
+}
+
+.left,
+.right,
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  gap: 1.4rem;
+}
+
+.right {
+  gap: 1.6rem;
+}
+
+.brand {
+  gap: .6rem;
+}
+
+.brand .logo {
+  width: 3.8rem;
+}
+
+.brand .name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-title-color);
+}
+
+.right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  transition: background-color .2s ease;
+}
+
+.right a:hover {
+  background: var(--background-hover);
+}
+
+.right img {
+  width: 2.5rem;
+  margin: .5rem;
+}
+
+.right .user {
+  width: 2.1rem;
+}
+
+/*===========================
+  Menu
+===========================*/
+.menu-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu {
+  width: 1.5rem;
+  height: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu div {
+  width: 100%;
+  height: 2px;
+  background: var(--menu-color);
+  transition: all .25s ease;
+}
+
+/*===========================
+  Sidebar
+===========================*/
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--header-height));
+  padding: 1rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--background-color);
+  border-right: 1px solid var(--border-color);
+  transition: width .4s ease;
+  z-index: 100;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar img {
+  width: 2rem;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  padding: .9rem .7rem;
+  margin: 0 .5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: .5rem;
+  white-space: nowrap;
+  transition: background-color .2s ease;
+}
+
+.sidebar a:hover {
+  background: var(--background-hover);
+}
+
+.sidebar a.selected {
+  color: var(--text-selected-color);
+  background: var(--background-selected);
+}
+
+/*===========================
+  Main
+===========================*/
+main {
+  margin-top: var(--header-height);
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  transition: margin-left .4s ease;
+}
+
+/*===========================
+  Resonsive
+===========================*/
+@media (max-width: 500px) {
+  .right {
+    gap: .8rem;
+  }
+  .sidebar {
+    width: 0;
+  }
+  body.menu-toggle .sidebar {
+    width: var(--sidebar-width-open);
+  }
+  main {
+    margin-left: 0;
+  }
+  body.menu-toggle main {
+    margin-left: 0;
+  }
+}
