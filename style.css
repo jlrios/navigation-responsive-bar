@@ -30,7 +30,8 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 body.menu-toggle .sidebar {
@@ -201,6 +202,22 @@ main {
   margin-left: var(--sidebar-width);
   padding: 2rem;
   transition: margin-left .4s ease;
+}
+
+/*===========================
+Test button
+===========================*/
+.test-panel-button {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.test-panel-button:hover {
+  background-color: var(--background-hover);
 }
 
 /*===========================

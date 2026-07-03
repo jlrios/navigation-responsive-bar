@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/right-drawer.css">
   <script src="/script.js" defer></script>
-  <title>Barra de navegación lateral</title>
+  <title>Ejercicio barra de navegación lateral y panel informativo</title>
 </head>
 <body>
   <header>
@@ -19,7 +20,7 @@
       </div>
       <div class="brand">
         <img src="/icons/dragon.svg" alt="Dragon Campus" class="logo">
-        <span class="name">Plantel 20</span>
+        <span class="name">Dragón</span>
       </div>
     </div>
     <div class="right">
@@ -27,6 +28,7 @@
         <img src="/icons/notification.svg" alt="Chat">
       </a>
       <img src="/icons/user.svg" alt="User" class="user">
+      <button class="test-panel-button">Ver panel</button>
     </div>
   </header>
   <div id="sidebar" class="sidebar">
@@ -58,9 +60,16 @@
     </nav>
   </div>
   <main id="main">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-    </p>
+    <div class="info-panel">
+      <button class="panel-close" aria-label="Cerrar panel">
+        &times;
+      </button>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
   </main>
 </body>
 </html>
