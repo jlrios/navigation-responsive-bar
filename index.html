@@ -1,75 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/right-drawer.css">
-  <script src="/script.js" defer></script>
-  <title>Ejercicio barra de navegación lateral y panel informativo</title>
-</head>
-<body>
-  <header>
-    <div class="left">
-      <div class="menu-container">
-        <div id="menu" class="menu">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>       
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio barra de navegación lateral y panel informativo</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <!-- ===========================
+         Header
+    ============================ -->
+    <header>
+      <div class="left">
+        <!-- Menu button -->
+        <button
+          id="menu"
+          class="menu"
+          aria-label="Abrir menú lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Brand -->
+        <a href="/" class="brand">
+          <img src="/icons/dragon.svg" alt="Dragon Campus" class="logo" />
+          <span class="name">Dragón</span>
+        </a>
       </div>
-      <div class="brand">
-        <img src="/icons/dragon.svg" alt="Dragon Campus" class="logo">
-        <span class="name">Dragón</span>
+      <div class="right">
+        <!-- Notifications -->
+        <a href="#" aria-label="Notificaciones">
+          <img src="/icons/notification.svg" alt="" />
+        </a>
+        <!-- User avatar -->
+        <img src="/icons/user.svg" alt="Perfil del usuario" class="user" />
+        <!-- Open panel button -->
+        <button
+          class="info-panel-button"
+          aria-controls="info-panel"
+          aria-expanded="false"
+        >
+          Ver panel
+        </button>
       </div>
-    </div>
-    <div class="right">
-      <a href="#">
-        <img src="/icons/notification.svg" alt="Chat">
-      </a>
-      <img src="/icons/user.svg" alt="User" class="user">
-      <button class="test-panel-button">Ver panel</button>
-    </div>
-  </header>
-  <div id="sidebar" class="sidebar">
-    <nav>
-      <ul>
-        <li>
-          <a href="#" class="selected">
-            <img src="/icons/home.svg" alt="">
-            <span>Inicio</span>
-          </a>
-          <a href="#">
-            <img src="/icons/tools.svg" alt="">
-            <span>Configuración</span>
-          </a>
-          <a href="#">
-            <img src="/icons/sun.svg" alt="">
-            <span>Tema</span>
-          </a>
-          <a href="#">
-            <img src="/icons/book.svg" alt="">
-            <span>Ayuda</span>
-          </a>
-          <a href="#">
-            <img src="/icons/information.svg" alt="">
-            <span>Acerca de</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <main id="main">
-    <div class="info-panel">
-      <button class="panel-close" aria-label="Cerrar panel">
+    </header>
+    <!-- ===========================
+      Sidebar
+    ============================ -->
+    <aside id="sidebar" class="sidebar">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li>
+            <a href="#" class="selected" aria-current="page">
+              <img src="/icons/home.svg" alt="" />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/tools.svg" alt="" />
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/sun.svg" alt="" />
+              <span>Tema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/book.svg" alt="" />
+              <span>Ayuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/information.svg" alt="" />
+              <span>Acerca de</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===========================
+      Main content
+    ============================ -->
+    <main id="main">
+      <h1>Inicio</h1>
+
+      <p>Bienvenido a Dragon Campus.</p>
+    </main>
+    <!-- ===========================
+      Information panel
+    ============================ -->
+    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
+      <button class="panel-close-button" aria-label="Cerrar panel">
         &times;
       </button>
       <div>
+        <h2 id="panel-title">Información</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-    </div>
-  </main>
-</body>
+    </aside>
+  </body>
 </html>

@@ -1,21 +1,20 @@
 const menu = document.getElementById("menu");
 const panel = document.querySelector(".info-panel");
-const closeButton = document.querySelector(".panel-close");
-const showPanelButton = document.querySelector(".test-panel-button");
+const closePanelButton = document.querySelector(".panel-close-button");
+const infoPanelButton = document.querySelector(".info-panel-button");
 
 // Menu
 menu.addEventListener("click", () => {
   document.body.classList.toggle("menu-toggle");
 });
 
-// Test panel
-showPanelButton.addEventListener("click", () => {
-  console.log("Toggle.");
+// Expanded information panel
+infoPanelButton.addEventListener("click", () => {
   panel.classList.add("open");
 });
 
-// Close information panel
-closeButton.addEventListener("click", () => {
+// Collapsed information panel
+closePanelButton.addEventListener("click", () => {
   panel.classList.remove("open");
 });
 
